@@ -3,17 +3,86 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>p5.js beispiel x</title>
-    <style> body {padding: 0; margin: 0;} </style>
+    <title>p5.js beispiel 8</title>
+    <style>
+      body {padding: 0; margin: 0;}
+      li {
+        display : inline;
+      }
+      div.slider1 {
+         position:absolute;
+         left: 0;
+         width: 230px;
+         height:50px;
+      }
+      div.slider2 {
+         position:absolute;
+         left: 490px;
+         width: 230px;
+         height:50px;
+      }
+      div.zeit {
+         position:absolute;
+         left: 725px;
+         width: 80px;
+         height:50px;
+      }
+      button.but1 {
+        position:absolute;
+        left: 240px;
+        border-width: 5px;
+        border-radius: 2px;
+        border-color: rgb( 150, 150, 150);
+        background-color:gray;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        width:120px;
+        height:40px;
+      }
+      button.but2 {
+        position:absolute;
+        left: 360px;
+        border-width: 5px;
+        border-radius: 2px;
+        border-color: rgb( 150, 150, 150);
+        background-color:gray;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        width:120px;
+        height:40px;
+      }
+      input {
+        width:230px;
+      }
+      span {
+        font-size: 20px;
+        background-color:darkgreen;
+        color: white;
+      }
+    </style>
     <script src="../libraries/p5/p5.min.js"></script>
-    <script src="../libraries/p5/addons/p5.sound.min.js"></script>
     <script src="sketch.js"></script>
   </head>
   <body>
-    <p>
-      Der "background" Befehl wird in die draw-Funktion verschoben. Damit wird
-      mit jedem Durchlauf der Hintergrund neu aufgebaut. Die 8 Speichen werden
-      mit dem "line" - Befehl und des sin/cos-Funktion in das Rad gezeichnet.
-    </p>
+    <main>
+      <p>
+      Rad mit einem p5 Grafikobjekt für eine Kurvendarstellung.
+      </p>
+      <div id="meincanvas"></div>
+      <p></p>
+        <div class="slider1">
+            <div class="range" style="color: blue">Geschw: <span id="geschwindigkeit"></span> Pixel/sec</div>
+            <input type="range" id="slider1" value="40" min="1" max="80">
+        </div>
+            <button class="but1" id="stopbutton">Stop/Run</button>
+            <button class="but2" id="reversebutton">Vor/Rueck</button>
+        <div class="slider2">
+            <div class="range">Radius: <span id="radius"></span> Pixel</div>
+            <input type="range" id="slider2" value="100" min="30" max="300">
+        </div>
+        <div class="zeit" id="simzeit">Zeit: </div>
+    </main>
   </body>
 </html>
