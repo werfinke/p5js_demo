@@ -3,10 +3,6 @@ var firstImage = 0;
 var mouseIstGedrueckt = false;
   
 
-function preload() {
-}
-
-
 function setup() {
   createCanvas(400, 400);
 
