@@ -4,8 +4,8 @@ var mouseIstGedrueckt = false;
   
 
 function setup() {
-  createCanvas(400, 400);
-
+  var canvas = createCanvas(400,400);
+  canvas.parent('meincanvas');
   for (var i = 0; i < 16; i++) {
   	var stg = "images/Memory" + (i+1) + ".jpg";
     img[i] = loadImage(stg); // Load the image
@@ -14,9 +14,7 @@ function setup() {
 }
 
 function draw() {
-
   if (!mouseIstGedrueckt) { 
- 
    // Displays image
    for (var i = 0; i < 4; i++) { 
     for (var j = 0; j < 4; j++) {
@@ -28,14 +26,12 @@ function draw() {
 
 function mousePressed() {
   mouseIstGedrueckt = true;
-
   // Displays image
   for (var i = 0; i < 4; i++) {
    for (var j = 0; j < 4; j++) {
     image(img[4*i + j], i * 100, j * 100);
    } 
   }    
-
 }
 
 function mouseReleased() {
