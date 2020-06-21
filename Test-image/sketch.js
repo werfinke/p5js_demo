@@ -1,7 +1,7 @@
 var img = []; // Declare variable 'img'.
 var firstImage = 0;
 var mouseIstGedrueckt = false;
-
+var ersterDurchlauf = true;
   
 function setup() {
   createCanvas(400, 400);
@@ -10,18 +10,24 @@ function setup() {
     img[i] = loadImage(stg); // Load the image
   } 
 
-  firstImage = round(random(0,16));
-
-  // Displays image
-
-  for (var i = 0; i < 4; i++) {
-   for (var j = 0; j < 4; j++) {
-    image(img[firstImage], i * 100, j * 100);
-   }
-  } 
+ 
 }
 
 function draw() {
+
+  if (ersterDurchlauf) {
+    ersterDurchlauf = false;
+    firstImage = round(random(0,16));
+
+    // Displays image
+
+    for (var i = 0; i < 4; i++) {
+     for (var j = 0; j < 4; j++) {
+      image(img[firstImage], i * 100, j * 100);
+     }
+    }  	
+   }
+
 
   if (mouseIstGedrueckt) { 
  
