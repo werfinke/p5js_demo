@@ -6,10 +6,10 @@ function setup() {
   	var stg = "images/Memory" + (i+1) + ".jpg";
     img[i] = loadImage(stg); // Load the image
   } */
-  img[0] = loadImage("images/Memory01.jpg"); // Load the image
-  img[1] = loadImage("images/Memory01.jpg"); // Load the image
-  img[2] = loadImage("images/Memory01.jpg"); // Load the image
-  img[3] = loadImage("images/Memory01.jpg"); // Load the image
+  img[0] = loadImage("images/Memory1.jpg"); // Load the image
+  img[1] = loadImage("images/Memory2.jpg"); // Load the image
+  img[2] = loadImage("images/Memory3.jpg"); // Load the image
+  img[3] = loadImage("images/Memory4.jpg"); // Load the image
   
 }
 
