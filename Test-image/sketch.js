@@ -30,17 +30,7 @@ function draw() {
     for (var j = 0; j < 4; j++) {
      image(img[4*i + j], i * 100, j * 100);
     } 
-   }
-  } else {
-    
-   firstImage = round(random(0,16));
-    // Displays image
-
-   for (var i = 0; i < 4; i++) { 
-    for (var j = 0; j < 4; j++) {
-     image(img[firstImage], i * 100, j * 100);
-    }
-   }	
+   }    
   }
 }
 
@@ -49,5 +39,14 @@ function mousePressed() {
 }
 
 function mouseReleased() {
-  mouseIstGedrueckt = false;
+   mouseIstGedrueckt = false;
+
+   firstImage = round(random(0,16));
+    // Displays image
+
+   for (var i = 0; i < 4; i++) { 
+    for (var j = 0; j < 4; j++) {
+     image(img[firstImage], i * 100, j * 100);
+    }
+   }	
 }
