@@ -1,13 +1,17 @@
-let img; // Declare variable 'img'.
+var img[]; // Declare variable 'img'.
 
 function setup() {
   createCanvas(400, 400);
-  img = loadImage('images/Memory01.jpg'); // Load the image
+  for (var i = 0; i < 16; i++) {
+    img[i] = loadImage("images/Memory" + i.toString() + ".jpg"); // Load the image
+  }
 }
 
 function draw() {
-  // Displays the image at its actual size at point (0,0)
-  image(img, 0, 0);
-  // Displays the image at point (0, height/2) at half size
-  image(img, 0, height / 2, img.width / 2, img.height / 2);
+  // Displays image
+  for (var i = 0; i < 4; i++) {
+   for (var j = 0; j < 4; j++) {
+    image(img[i+j], i * 100, j * 100);
+   }
+  }
 }
