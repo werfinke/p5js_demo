@@ -1,9 +1,9 @@
-var img[]; // Declare variable 'img'.
+var img = []; // Declare variable 'img'.
 
 function setup() {
   createCanvas(400, 400);
   for (var i = 0; i < 16; i++) {
-  	var stg = "images/Memory" + i.toString() + ".jpg";
+  	var stg = "images/Memory" + (i+1) + ".jpg";
     img[i] = loadImage(stg); // Load the image
   }
 }
