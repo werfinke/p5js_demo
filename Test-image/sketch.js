@@ -2,16 +2,17 @@ var img = []; // Declare variable 'img'.
 
 function setup() {
   createCanvas(400, 400);
-  for (var i = 0; i < 16; i++) {
+ /* for (var i = 0; i < 16; i++) {
   	var stg = "images/Memory" + (i+1) + ".jpg";
     img[i] = loadImage(stg); // Load the image
   } 
- /*
+ */
   img[0] = loadImage("images/Memory1.jpg"); // Load the image
   img[1] = loadImage("images/Memory2.jpg"); // Load the image
   img[2] = loadImage("images/Memory3.jpg"); // Load the image
   img[3] = loadImage("images/Memory4.jpg"); // Load the image
-  */
+  img[4] = loadImage("images/Memory5.jpg"); // Load the image
+  
 }
 
 function draw() {
