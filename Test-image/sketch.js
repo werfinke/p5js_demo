@@ -3,31 +3,28 @@ var firstImage = 0;
 var mouseIstGedrueckt = false;
 var ersterDurchlauf = true;
   
-function setup() {
-  createCanvas(400, 400);
+
+function preload() {
   for (var i = 0; i < 16; i++) {
   	var stg = "images/Memory" + (i+1) + ".jpg";
     img[i] = loadImage(stg); // Load the image
   } 
+}
 
- 
+
+function setup() {
+  createCanvas(400, 400);
+  firstImage = round(random(0,16));
+
+  // Displays image
+  for (var i = 0; i < 4; i++) { 
+   for (var j = 0; j < 4; j++) {
+    image(img[firstImage], i * 100, j * 100);
+   }
+  }	
 }
 
 function draw() {
-
-  if (ersterDurchlauf) {
-    ersterDurchlauf = false;
-    firstImage = round(random(0,16));
-
-    // Displays image
-
-    for (var i = 0; i < 4; i++) {
-     for (var j = 0; j < 4; j++) {
-      image(img[firstImage], i * 100, j * 100);
-     }
-    }  	
-   }
-
 
   if (mouseIstGedrueckt) { 
  
@@ -48,8 +45,7 @@ function mouseReleased() {
    mouseIstGedrueckt = false;
 
    firstImage = round(random(0,16));
-    // Displays image
-
+   // Displays image
    for (var i = 0; i < 4; i++) { 
     for (var j = 0; j < 4; j++) {
      image(img[firstImage], i * 100, j * 100);
