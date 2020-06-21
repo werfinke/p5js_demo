@@ -10,14 +10,13 @@ function setup() {
   	var stg = "images/Memory" + (i+1) + ".jpg";
     img[i] = loadImage(stg); // Load the image
   } 
+  firstImage = round(random(0,16));
 }
 
 function draw() {
 
   if (!mouseIstGedrueckt) { 
  
-   firstImage = round(random(0,16));
-
    // Displays image
    for (var i = 0; i < 4; i++) { 
     for (var j = 0; j < 4; j++) {
@@ -41,4 +40,5 @@ function mousePressed() {
 
 function mouseReleased() {
    mouseIstGedrueckt = false;
+   firstImage = round(random(0,16));
 }
