@@ -87,17 +87,24 @@ router.get('/covid', async (ctx) => {
 });
 // GET /usa  GEO-Daten für Staatsgrenzen
 router.get('/usa', async (ctx) => {
-  const _file = await Deno.readTextFile('./USA_states_geo.json');
+  const responseUsa = await fetch("http://appsag.de/werner/covid/USA_states_geo.json");
+  console.log(responseUsa.status);  // e.g. 200
+  console.log(responseUsa.statusText); // e.g. "OK"
+  const jsonData = await responseUsa.json();
+
+//  const _file = await Deno.readTextFile('./USA_states_geo.json');
 // Vorsicht Access-Control-Allow-Origin = "*" nur für Testzwecke
 //  ctx.response.headers.set("Access-Control-Allow-Origin","*");
-  ctx.response.headers.set("Server","deno oak");
-  ctx.response.status = 200;
-  ctx.response.body = {
-          success: true,
-          data: JSON.parse(_file)
-      }
-});
+    ctx.response.headers.set("Server","deno oak");
+    ctx.response.status = 200;
+    ctx.response.body = {
+            success: true,
+//            data: JSON.parse(_file)
+          data: jsonData
+        }
 
+
+});
 app.addEventListener('listen', (s) => {
   console.log(`Listening on localhost:${port}`);
   console.log(s.type);
