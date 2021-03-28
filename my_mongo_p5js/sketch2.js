@@ -30,7 +30,7 @@ var canvas = createCanvas(500, 500);
 canvas.parent('meincanvas');
 frameRate(2);
 textSize(24); 
-text("Loading ...", 220, 200); 
+text("Please wait - loading ...", 220, 200); 
 
 } 
 
