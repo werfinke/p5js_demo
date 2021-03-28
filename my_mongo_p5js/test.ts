@@ -1,12 +1,12 @@
 import { dirname, fromFileUrl } from "https://deno.land/std@0.91.0/path/mod.ts";
 
 console.log(import.meta.url);
-const moduleDir = dirname(fromFileUrl(import.meta.url));
-console.log(moduleDir);
+//const moduleDir = dirname(fromFileUrl(import.meta.url));
+//console.log(moduleDir);
 
 console.log(Deno.mainModule);
-const moduleDir2 = dirname(fromFileUrl(Deno.mainModule));
-console.log(moduleDir2);
+//const moduleDir2 = dirname(fromFileUrl(Deno.mainModule));
+//console.log(moduleDir2);
 
 
 console.log(Deno.execPath());
