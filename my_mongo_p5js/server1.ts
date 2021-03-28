@@ -35,7 +35,7 @@ await client.connect({
     tls: true,
     servers: [
       { 
-        host: "cluster0-shard-00-02.kuly3.mongodb.net", 
+        host: "cluster0-shard-00-01.kuly3.mongodb.net", 
         port: 27017 
       }
     ],
