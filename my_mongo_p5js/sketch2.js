@@ -30,7 +30,7 @@ var canvas = createCanvas(500, 500);
 canvas.parent('meincanvas');
 frameRate(2);
 textSize(24); 
-text("Please wait - loading ...", 220, 200); 
+text("Loading ...", 220, 200); 
 
 } 
 
@@ -104,10 +104,10 @@ function draw() {
 // Zeichne Staaten
   stroke('blue');
   strokeWeight(1);
-  for (let s = 0; s < usaGeoData.data.features.length; s++) {
-    if (usaGeoData.data.features[s].properties.name === "Alaska" ||
-        usaGeoData.data.features[s].properties.name === "Hawaii" ) {
-      drawgeojsonCollection(usaGeoData,s,820,5,655,9);
+  for (let s = 0; s < usaGeoData.data.length; s++) {
+    if (usaGeoData.data[s].properties.name === "Alaska" ||
+        usaGeoData.data[s].properties.name === "Hawaii" ) {
+      drawgeojsonCollection(usaGeoData,s,810,5,655,9);
     } else {
       drawgeojsonCollection(usaGeoData,s,1020,8,790,12);
     }
@@ -139,20 +139,20 @@ function drawCircle(uData,xCoord,yCoord,str,xPosKorr,xScaleKorr,yPosKorr,yScaleK
 /*** End Function drawCircle */
 
 function drawgeojsonCollection(geojsonData,ind,xPosKorr,xScaleKorr,yPosKorr,yScaleKorr) {
-  if (geojsonData.data.features[ind].geometry.type === "Polygon" || 
-      geojsonData.data.features[ind].geometry.type === "MultiPolygon") {
-    if (geojsonData.data.features[ind].geometry.type == "Polygon") {
-      for (let i = 0; i < geojsonData.data.features[ind].geometry.coordinates.length; i++) {
-        for (let k = 0; k < geojsonData.data.features[ind].geometry.coordinates[i].length-1; k++) {
-          line(xPosKorr + xScaleKorr * geojsonData.data.features[ind].geometry.coordinates[i][k][0], yPosKorr - yScaleKorr * geojsonData.data.features[ind].geometry.coordinates[i][k][1],
-            xPosKorr + xScaleKorr * geojsonData.data.features[ind].geometry.coordinates[i][k+1][0], yPosKorr - yScaleKorr * geojsonData.data.features[ind].geometry.coordinates[i][k+1][1]);
+  if (geojsonData.data[ind].geometry.type === "Polygon" || 
+      geojsonData.data[ind].geometry.type === "MultiPolygon") {
+    if (geojsonData.data[ind].geometry.type == "Polygon") {
+      for (let i = 0; i < geojsonData.data[ind].geometry.coordinates.length; i++) {
+        for (let k = 0; k < geojsonData.data[ind].geometry.coordinates[i].length-1; k++) {
+          line(xPosKorr + xScaleKorr * geojsonData.data[ind].geometry.coordinates[i][k][0], yPosKorr - yScaleKorr * geojsonData.data[ind].geometry.coordinates[i][k][1],
+            xPosKorr + xScaleKorr * geojsonData.data[ind].geometry.coordinates[i][k+1][0], yPosKorr - yScaleKorr * geojsonData.data[ind].geometry.coordinates[i][k+1][1]);
         }
       }        
     } else {
-      for (let i = 0; i < geojsonData.data.features[ind].geometry.coordinates.length; i++) {
-        for (let k = 0; k < geojsonData.data.features[ind].geometry.coordinates[i][0].length-1; k++) {
-          line(xPosKorr + xScaleKorr * geojsonData.data.features[ind].geometry.coordinates[i][0][k][0], yPosKorr - yScaleKorr * geojsonData.data.features[ind].geometry.coordinates[i][0][k][1],
-            xPosKorr + xScaleKorr * geojsonData.data.features[ind].geometry.coordinates[i][0][k+1][0], yPosKorr - yScaleKorr * geojsonData.data.features[ind].geometry.coordinates[i][0][k+1][1]);
+      for (let i = 0; i < geojsonData.data[ind].geometry.coordinates.length; i++) {
+        for (let k = 0; k < geojsonData.data[ind].geometry.coordinates[i][0].length-1; k++) {
+          line(xPosKorr + xScaleKorr * geojsonData.data[ind].geometry.coordinates[i][0][k][0], yPosKorr - yScaleKorr * geojsonData.data[ind].geometry.coordinates[i][0][k][1],
+            xPosKorr + xScaleKorr * geojsonData.data[ind].geometry.coordinates[i][0][k+1][0], yPosKorr - yScaleKorr * geojsonData.data[ind].geometry.coordinates[i][0][k+1][1]);
         }
       }
     }
