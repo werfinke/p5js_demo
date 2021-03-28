@@ -1,4 +1,5 @@
 //
+console.log("Test2");
 console.log(import.meta.url);
 
 console.log(Deno.mainModule);
